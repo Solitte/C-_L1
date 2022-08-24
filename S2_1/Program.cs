@@ -1,29 +1,14 @@
 ﻿
-int FindMaxDigit (int number)
+int SecondNumber (int number)
 {
     int ed = number%10;
-    int des = (number%100)/10;
+    // int des = (number%100)/10;
     int sot = number/100;
-    int max;
-
-    if (ed>des) 
-    {
-      max = ed;  
-    }
-    
-    else 
-    {
-      max = des;
-    }
-
-    if (max<sot)
-    {
-     max = sot;
-    }
-    return max;
+    int number2 = sot*10+ed;
+    return number2;
        
 }
 int rand = new Random().Next(100,1000);
 
-int maxDigit = FindMaxDigit(rand);
-Console.WriteLine($"maximal digit of {rand} is {maxDigit}");
+int secondNumber = SecondNumber(rand);
+Console.WriteLine($"new number of {rand} is {secondNumber}");
