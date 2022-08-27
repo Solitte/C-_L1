@@ -6,7 +6,7 @@ void Diapozon(int num)
     if (num == 2) Console.WriteLine("Diapozon x<0 i y>0");    
     if (num == 3) Console.WriteLine("Diapozon x<0 i y<0");    
     if (num == 4) Console.WriteLine("Diapozon x>0 i y<0");
-    if (num <1 || num >4) Console.WriteLine("Neverno vvedena chetvert");
+    if (num < 1 || num > 4) Console.WriteLine("Neverno vvedena chetvert");
 
 }
 Console.WriteLine("Vedite nomer chetverti");
