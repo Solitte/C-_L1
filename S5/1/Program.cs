@@ -85,3 +85,50 @@ PrintArray(array);
 Console.WriteLine();
 Console.WriteLine($"Result: {NumberArray(array, number)}");
 */
+
+// Zadat` massiv [15]. Naiti kollichestvo elementov massiva, znachenie kotorih ot 10 do 95.
+
+int[] RandomArray(int size, int minElem, int maxElem)
+{
+    int[] array = new int[size];
+    for (int i = 0; i<size; i++)
+    {
+        array[i] = new Random().Next(minElem, maxElem+1);
+    }
+    return array;
+}
+
+void PrintArray(int[] array)
+{
+    for (int i=0; i<array.Length; i++)
+    {
+        Console.Write($"{array[i]} ");
+    } 
+}
+
+int CountArray(int[] array, int a, int b)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (a <= array[i] && array[i] <= b)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+Console.WriteLine("Vvedite razmer massiva");
+int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Vvedite  minimalnoe chislo massiva");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Vvedite maximalnoe chislo massiva");
+int max = Convert.ToInt32(Console.ReadLine());
+int[] array = RandomArray(size, min, max);
+PrintArray(array);
+Console.WriteLine();
+Console.WriteLine("Vvedite  diapozon poiska znachenii elementov massiva");
+int a = Convert.ToInt32(Console.ReadLine());
+int b = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Result: {CountArray(array, a, b)}");
