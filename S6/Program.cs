@@ -20,7 +20,7 @@ int number = Convert.ToInt32(Console.ReadLine());
 InTwo (number); 
 */
 // Вывести первые N чисел Фибоначи, где первые два числа a,b
-
+/*
 int[] FibonachchiAr(int N, int a, int b)
 {
     int[] array = new int[N];
@@ -47,3 +47,21 @@ int a = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Input second number Fibonachchi: ");
 int b = Convert.ToInt32(Console.ReadLine());
 PrintArray(FibonachchiAr(N, a, b));
+*/
+
+// Даны 3 числа, написать прогу которая проверяет является ли это стороны треугольника
+
+bool Treugolnik(int a, int b, int c)
+{
+    if (a + b > c && a + c > b && c + b > a) return true;
+    else return false;
+}
+
+Console.WriteLine("Input first number: ");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input second number: ");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input three number: ");
+int c = Convert.ToInt32(Console.ReadLine());
+bool result = Treugolnik(a, b, c);
+Console.WriteLine(result);
