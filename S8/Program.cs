@@ -46,6 +46,7 @@ int[,] SwapColumnRowArray(int[,] table)
     return array;
 }
 */
+/*
 int[,] SwapColumnRowArray(int[,] table)
 {
     int temp;
@@ -65,3 +66,41 @@ Print2DArray(array);
 //int[,] arr = SwapColumnRowArray(array);
 int[,] arr = SwapColumnRowArray(array);
 Print2DArray(arr);
+*/
+// Заполните двухмерный массив МxN и удалите строку и столбец на пересечении наименьшего элемента
+
+int[] DeleteRowColumn2DArray(int[,] table)
+{
+    int min=table[0,0];
+    int m=0;
+    int n=0;
+        for(int i=0; i < table.GetLength(0); i++)
+                for(int j = 0; j < table.GetLength(1); j++)
+                    if (table[i,j] < min)
+                       {
+                         min = table[i,j];
+                         m = i;
+                         n = j;
+                    }
+        Console.WriteLine($"{min}; {m}; {n}");
+        int[] arr = {m,n};
+    return arr;
+}
+void PrintDel2DArray(int[,] table, int m, int n)
+{
+    for (int i = 0; i < table.GetLength(0); i++)
+    {
+        if(i == m) i++;
+        for (int j = 0; j < table.GetLength(1); j++)
+        {
+            if(j == n) j++;
+            Console.Write($"{table[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();   
+}
+int[,] array = Random2DArray();
+Print2DArray(array);
+int[] arr = DeleteRowColumn2DArray(array);
+PrintDel2DArray(array, arr[0], arr[1]);
